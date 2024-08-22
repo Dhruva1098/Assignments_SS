@@ -10,4 +10,5 @@ int main(void) {
 	int in = read(0, buff, sizeof(buff));
 	printf("Output for STDOUT is:\n");
 	write(1, buff, in);
+	return 0;
 }
