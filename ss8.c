@@ -5,8 +5,8 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
-int main(void){
-	int fd = open("example.txt", O_RDONLY, 0644);
+int main(int argc, char * argv[]){
+	int fd = open(argv[1], O_RDONLY, 0644);
 	if (fd < 0){
 		perror("open");
 	}
@@ -16,4 +16,5 @@ int main(void){
 	for(i = 0; i <= retval ; i++){
 		printf("%c", buf[i]);
 	}
+	close(fd);
 }
