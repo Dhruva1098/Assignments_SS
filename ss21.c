@@ -1,13 +1,13 @@
-/* 
-ps -o pid,pri,nice,comm -p 4999
-PID PRI NI COMM
-4999  31  5 ./a.out
+#include <stdio.h>
+#include <unistd.h>
 
-sudo renice -n -20 -p 4999
-ps -o pid,pri,nice,comm -p 4999
-PID PRI NI COMM
-4999  31 -15 ./a.out
-*/
 int main(){
-  for(;;);
+  int pid;
+  pid = fork();
+
+  if(pid == 0){
+    printf("Child Process pid is: %d \n", getpid());
+  } else {
+    printf("Parent Process pid is: %d \n", getpid());
+  }
 }
