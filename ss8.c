@@ -5,16 +5,19 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>
+const char *EOL = "\n";
 int main(int argc, char * argv[]){
 	int fd = open(argv[1], O_RDONLY, 0644);
 	if (fd < 0){
 		perror("open");
 	}
 	char buf[100];
-	ssize_t retval = read(fd, buf, sizeof(buf));
-	int i = 0;
-	for(i = 0; i <= retval ; i++){
-		printf("%c", buf[i]);
+	int k = 0;
+	char c;
+	while(c != EOF){
+	   while(c != *EOL) {
+				read(fd, &c, sizeof(c));
+				} printf("%s", &c);
 	}
 	close(fd);
 }

@@ -9,7 +9,7 @@ struct ticket_info{
 };
 int main(){
     struct ticket_info info;
-    int fd = open("trains.txt", O_RDWR, 0744);
+    int fd = open("trains.txt", O_RDWR, 0777);
     read(fd, &info , sizeof(info));
     if (fd < 0) {
         perror("open");
@@ -25,6 +25,7 @@ int main(){
     printf("current value of ticket no is %d \n press enter to update value", info.ticket_no);
     getchar();
     info.ticket_no++;
+    lseek(fd, 0, SEEK_SET);
     write(fd, &info, sizeof(info));
     lock.l_type = F_UNLCK;
     fcntl(fd,F_SETLK, &lock);
