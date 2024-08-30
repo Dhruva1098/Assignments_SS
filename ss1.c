@@ -5,6 +5,8 @@ b) hard link
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 int main(void) {
 	int out = symlink("example.txt", "example_soft_link.txt");
 	if (out < 0) {
@@ -14,4 +16,8 @@ int main(void) {
 	if (out2 < 0) {
 		perror("linkat");
 	}
+  int out3 = mkfifo("fifo", 0666);
+  if(out3 < 0) {
+    perror("mkfifo");
+  }
 }
