@@ -1,9 +1,13 @@
-/* 
-* 11. Write a program to open a file, duplicate the file descriptor and append the file with both the descriptors and check whether the file is updated with proper descriptors or not
-* a. Use dup
-* b. Use dup2
-* c. Use fcntl
-* */
+/*
+============================================================================
+Name : ss11.c
+Author : Dhruva Sharma
+Description : Write a program to open a file, duplicate the file descriptor and append the file with both the descriptors and check whether the file is updated with proper descriptors or not
+a. Use dup
+b. Use dup2
+c. Use fcntl
+=============================================================================
+*/
 #include <stdio.h>
 #include <unistd.h>
 #include <fcntl.h>

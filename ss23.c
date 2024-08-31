@@ -1,4 +1,14 @@
 /*
+============================================================================
+Name : ss23.c
+Author : Dhruva Sharma
+Descripton :Write a program to create a Zombie state of the running program.
+
+============================================================================
+*/
+
+
+/*
 dhruvasharma      8291   0.0  0.0        0      0 s000  ZN   10:20am   0:00.00 <defunct>
 * */
 

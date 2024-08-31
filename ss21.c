@@ -1,3 +1,18 @@
+/*
+============================================================================
+Name : ss21.c
+Author : Dhruva Sharma
+Descripton :Write a program, call fork and print the parent and child process id.
+
+============================================================================
+*/
+/*
+./a.out
+Parent Process pid is: 18082
+Child Process pid is: 18083
+*/
+
+
 #include <stdio.h>
 #include <unistd.h>
 

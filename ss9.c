@@ -1,6 +1,10 @@
 /*
- * write a program to print information about a given file
- */
+============================================================================
+Name : ss9.c
+Author : Dhruva Sharma
+Description : write a program to print information about a given file
+============================================================================
+*/
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdio.h>

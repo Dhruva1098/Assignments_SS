@@ -1,3 +1,11 @@
+/*
+============================================================================
+Name : ss20.c
+Author : Dhruva Sharma
+Descripton : Find out the priority of your running program. Modify the priority with nice command.
+
+============================================================================
+*/
 /* 
 ps -o pid,pri,nice,comm -p 4999
 PID PRI NI COMM

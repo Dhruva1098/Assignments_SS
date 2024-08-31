@@ -1,3 +1,11 @@
+/*
+============================================================================
+Name : ss16_rdlock.c
+Author : Dhruva Sharma
+Descripton :Write a program to perform mandatory locking.
+b. Implement read lock
+============================================================================
+*/
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>

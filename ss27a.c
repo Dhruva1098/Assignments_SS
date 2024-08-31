@@ -1,4 +1,13 @@
 /*
+============================================================================
+Name : ss27a.c
+Author : Dhruva Sharma
+Descripton :Write a program to execute ls -Rl by the following system calls
+a. execl
+
+============================================================================
+*/
+/*
 ./a.out
 total 352
 -rw-r--r--@ 1 dhruvasharma  staff    537 29 Aug 10:28 19.c

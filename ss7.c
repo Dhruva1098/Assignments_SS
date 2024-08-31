@@ -1,6 +1,10 @@
 /*
- * 7. Write a program to copy file1 into file2
- */
+============================================================================
+Name : ss7.c
+Author : Dhruva Sharma
+Description : Write a program to copy file1 into file2
+============================================================================
+*/
 #include <fcntl.h>
 #include <sys/fcntl.h>
 #include <sys/syslimits.h>

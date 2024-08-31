@@ -1,4 +1,12 @@
 /*
+============================================================================
+Name : ss29.c
+Author : Dhruva Sharma
+Description : Write a program to get scheduling policy and modify the scheduling policy
+
+============================================================================
+*/
+/*
 sudo ./a.out
 Password:
 Current Priority = 0

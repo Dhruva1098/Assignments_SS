@@ -1,4 +1,12 @@
 /*
+============================================================================
+Name : ss24.c
+Author : Dhruva Sharma
+Descripton :Write a program to create an orphan process.
+
+============================================================================
+*/
+/*
 parent process pid: 8738:
 child process ppid: 8738:
 [2]  + 8738 done       ./a.out

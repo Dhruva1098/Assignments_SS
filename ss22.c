@@ -1,3 +1,14 @@
+
+/*
+============================================================================
+Name : ss22.c
+Author : Dhruva Sharma
+Descripton :Write a program, open a file, call fork, and then write to the file by both the child as well as the
+parent processes. Check output of the file.
+
+============================================================================
+*/
+
 /*
 cat 22.txt
 this is parent proocessThis is child Process%

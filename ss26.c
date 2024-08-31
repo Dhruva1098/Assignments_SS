@@ -1,4 +1,14 @@
 /*
+============================================================================
+Name : ss15.c
+Author : Dhruva Sharma
+Descripton :Write a program to execute an executable program.
+a. use some executable program
+b. pass some input to an executable program. (for example execute an executable of $./a.out name)
+
+============================================================================
+*/
+/*
 ./a.out ls
 19.c			ss18_read.c
 22.txt			ss2.c

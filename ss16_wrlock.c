@@ -1,3 +1,13 @@
+/*
+============================================================================
+Name : ss16_wrlock.c
+Author : Dhruva Sharma
+Descripton : Write a program to perform mandatory locking.
+a. Implement write lock
+
+============================================================================
+*/
+
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>

@@ -1,4 +1,13 @@
 /*
+============================================================================
+Name : ss25.c
+Author : Dhruva Sharma
+Descripton :Write a program to create three child processes. The parent should wait for a particular child (use
+waitpid system call).
+
+============================================================================
+*/
+/*
 child process 1, pid:9693
 child process 2, pid:9694
 waiting for child 9694 to finish

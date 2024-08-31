@@ -1,6 +1,6 @@
 /*
 ============================================================================
-Name : ss1.c
+Name : ss4.c
 Author : Dhruva Sharma
 Description : Write a program to open an existing file with read write mode. Try O_EXCL flag also
 ============================================================================

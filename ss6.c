@@ -1,6 +1,10 @@
 /*
- * 6. Write a program to take input from STDIN and display on STDOUT. Use only read/write system calls
- * */
+============================================================================
+Name : ss6.c
+Author : Dhruva Sharma
+Description :Write a program to take input from STDIN and display on STDOUT. Use only read/write system calls
+=============================================================================
+*/
 #include <unistd.h>
 #include <stdio.h>
 
