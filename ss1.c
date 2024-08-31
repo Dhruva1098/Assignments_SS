@@ -1,6 +1,12 @@
-/* 1. Create the following types of files using ii) System call
+/*
+============================================================================
+Name : ss1.c
+Author : Dhruva Sharma
+Description : 1. Create the following types of files using ii) System call
 a) soft link
 b) hard link
+c) fifo
+============================================================================
 */
 #include <unistd.h>
 #include <fcntl.h>
