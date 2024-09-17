@@ -1,13 +1,13 @@
 /*
  ===========================================================================================
-Name : ss8b.c
+Name : ss8d.c
 Author : Dhruva Sharma
 Description : Write a program using signal system call to catch the following signals
-b) SIGINT
+d) SIGALRM
 
 output:  
 [parallels@fedora-linux-38 handsOn2]$ ./a.out
-^CSIGINT caught
+SIGALRM caught
 
 =============================================================================================
 */
@@ -18,15 +18,16 @@ output:
 #include <sys/time.h>
 
 void sig_handler(int sig){
-	if(sig == SIGINT){
-		printf("SIGINT caught\n");
+	if(sig == SIGALRM){
+		printf("SIGALRM caught\n");
 	}
 	else
 		printf("unknown signal\n");
 }
 
 int main(){
-	signal(SIGINT, sig_handler);
+	signal(SIGALRM, sig_handler);
+	alarm(2);
 	pause();
 }
 
