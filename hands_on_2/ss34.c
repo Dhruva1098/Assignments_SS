@@ -33,7 +33,7 @@ int main() {
     struct sockaddr_in address;
     socklen_t addrlen = sizeof(address);
 
-    server_fd = socket(AF_INE T, SOCK_STREAM, 0);
+    server_fd = socket(AF_INET, SOCK_STREAM, 0);
     
 
    address.sin_family = AF_INET;

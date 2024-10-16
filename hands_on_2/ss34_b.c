@@ -9,61 +9,44 @@ Output:
 
 ============================================================================================
 */
-#include <stdio.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
+#include <errno.h>
 #include <unistd.h>
-#include <pthread.h>
 #include <arpa/inet.h>
-#include <sys/types.h>
 #include <sys/socket.h>
+#include <netinet/ip.h>
 
-#define PORT 8080
-#define BACKLOG 5
-
-void *handle_client(void *socket_fd) {
-    int new_socket = *((int *)socket_fd);
-    free(socket_fd);    char buffer[1024] = {0};
-    read(new_socket, buffer, 1024);
-    printf("Client: %s\n", buffer);
-    send(new_socket, "Hello from server", strlen("Hello from server"), 0);
-    close(new_socket);
-    return NULL;
+static void die(const char *msg){
+	int err = errno;
+	fprintf(stderr, "[%d] %s\n", err, msg);
+	abort();
 }
 
-int main() {
-    int server_fd;
-    struct sockaddr_in address;
-    socklen_t addrlen = sizeof(address);
-    server_fd = socket(AF_INET, SOCK_STREAM, 0);
-    address.sin_family = AF_INET;
-    address.sin_addr.s_addr = INADDR_ANY;
-    address.sin_port = htons(PORT);
-    if (bind(server_fd, (struct sockaddr *)&address, sizeof(address)) < 0) {
-        perror("bind failed");
-        exit(EXIT_FAILURE);
-    }
-    if (listen(server_fd, BACKLOG) < 0) {
-        perror("listen failed");
-        exit(EXIT_FAILURE);
-    }
-    while (1) {
-        int *new_socket = malloc(sizeof(int));
-        *new_socket = accept(server_fd, (struct sockaddr *)&address, &addrlen);
-        if (*new_socket < 0) {
-            perror("accept failed");
-            free(new_socket);
-	    continue;
-        }
-
-        pthread_t thread_id;
-        if (pthread_create(&thread_id, NULL, handle_client, (void *)new_socket) != 0) {
-            perror("pthread_create failed");
-            free(new_socket);
-        }
-
-        pthread_detach(thread_id); // Ensure the thread cleans up after finishing
-    }
-
-    return 0;
+int main(){
+	int fd = socket(AF_INET, SOCK_STREAM, 0);
+	if(fd<0){
+		die("socket()");
+	}
+	struct sockaddr_in addr = {};
+	addr.sin_family = AF_INET;
+	addr.sin_port = ntohs(1234);
+	addr.sin_addr.s_addr = ntohl(INADDR_LOOPBACK); //Loopback address 127.0.0.1
+	int rv = connect(fd, (const struct sockaddr *)&addr, sizeof(addr));
+	if(rv){
+		die("connect");
+	}
+	char msg[] = "hello";
+	write(fd, msg, strlen(msg));
+	char rbuffer[64] = {};
+	ssize_t n = read(fd, rbuffer, sizeof(rbuffer)-1);
+	if(n<0){
+		die("read");
+	}
+	printf("server says: %s\n", rbuffer);
+	close(fd);
+	return 0;
 }
+
